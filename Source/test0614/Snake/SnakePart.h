@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+﻿// Fill out your copyright notice in the Description page of Project Settings.
 
 #pragma once
 
@@ -14,6 +14,8 @@ class TEST0614_API ASnakePart : public AActor
 public:	
 	// Sets default values for this actor's properties
 	ASnakePart();
+
+	class ASnakeGameMode* GetSnakeGameMode();
 
 protected:
 	// Called when the game starts or when spawned

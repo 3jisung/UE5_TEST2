@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+ï»¿// Fill out your copyright notice in the Description page of Project Settings.
 
 #pragma once
 
@@ -36,6 +36,6 @@ public:
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
 private:
-	// ÀÌ³à¼®À» ¾Æ¿¹ ºí·çÇÁ¸°Æ®¿¡¼­ ¾µ¼öÀÖ°Ô ¸¸µå´Â ¹æ¹ı.
+	// ì´ë…€ì„ì„ ì•„ì˜ˆ ë¸”ë£¨í”„ë¦°íŠ¸ì—ì„œ ì“¸ìˆ˜ìˆê²Œ ë§Œë“œëŠ” ë°©ë²•.
 	AActor* Head;
 };

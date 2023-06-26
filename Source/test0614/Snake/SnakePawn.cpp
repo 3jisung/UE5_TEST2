@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+ï»¿// Fill out your copyright notice in the Description page of Project Settings.
 
 
 #include "SnakePawn.h"
@@ -60,7 +60,7 @@ void ASnakePawn::HeadPositionToCenter()
 
 	FIntVector3 Count = SnakeGameMode->GetCount();
 	FIntVector3 CenterCount;
-	// Á¤¼ö´Â 0.5°¡ ¾ø´Ù.
+	// ì •ìˆ˜ëŠ” 0.5ê°€ ì—†ë‹¤.
 	CenterCount.Y = (Count.Y) / 2;
 	CenterCount.Z = (Count.Z) / 2;
 	FVector Size = SnakeGameMode->GetTileSize();
