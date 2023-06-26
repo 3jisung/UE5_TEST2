@@ -15,7 +15,6 @@ void ASnakeGameMode::BeginPlay()
 	// []      []
 	// []      []
 	// [][][][][]
-
 }
 
 void ASnakeGameMode::CreateOutWall(int _Y, int _Z, FVector _TileSize, TSubclassOf<AActor> _WallType)
