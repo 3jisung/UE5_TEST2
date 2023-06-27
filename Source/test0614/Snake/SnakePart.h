@@ -17,6 +17,14 @@ public:
 
 	class ASnakeGameMode* GetSnakeGameMode();
 
+	void SetNext(ASnakePart* nextValue);
+	void SetPrev(ASnakePart* prevValue);
+	void SetPrevPos(FVector prevPosValue);
+
+	ASnakePart* GetNext();
+	ASnakePart* GetPrev();
+	FVector GetPrevPos();
+
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
@@ -25,4 +33,8 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
+private:
+	ASnakePart* next = nullptr;
+	ASnakePart* prev = nullptr;
+	FVector prevPos;
 };

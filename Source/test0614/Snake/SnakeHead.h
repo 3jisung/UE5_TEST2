@@ -38,4 +38,9 @@ public:
 
 	UFUNCTION(BlueprintCallable)
 		void DownAction();
+
+	void MoveParts();
+
+private:
+	FVector currentDir;
 };

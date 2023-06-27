@@ -9,6 +9,7 @@
 /**
  * 
  */
+class ASnakePart;
 UCLASS()
 class TEST0614_API ASnakeGameMode : public AGameMode
 {
@@ -41,6 +42,8 @@ public:
 
 	AActor* GetPart(int _Y, int _Z, FName _Tag);
 
+	void AddBody(ASnakePart* head);
+
 	void CurBodyReset();
 
 protected:
@@ -63,6 +66,6 @@ private:
 	UPROPERTY(Category = "GameModeValue", EditAnywhere, DisplayName = "바디 오브젝트 클래스")
 		TSubclassOf<AActor> BodyType;
 
-	UPROPERTY(Category = "GameModeValue", EditAnywhere, DisplayName = "그냥 테스트용 변수")
-		int Value;
+	UPROPERTY(Category = "GameModeValue", EditAnywhere, DisplayName = "바디 아이템 클래스")
+		TSubclassOf<AActor> BodyItemType;
 };

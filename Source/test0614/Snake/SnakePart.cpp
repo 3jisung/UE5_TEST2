@@ -52,3 +52,33 @@ ASnakeGameMode* ASnakePart::GetSnakeGameMode()
 
 	return SnakeGameMode;
 }
+
+void ASnakePart::SetNext(ASnakePart* nextValue)
+{
+	this->next = nextValue;
+}
+
+void ASnakePart::SetPrev(ASnakePart* prevValue)
+{
+	this->prev = prevValue;
+}
+
+void ASnakePart::SetPrevPos(FVector prevPosValue)
+{
+	this->prevPos = prevPosValue;
+}
+
+ASnakePart* ASnakePart::GetNext()
+{
+	return this->next;
+}
+
+ASnakePart* ASnakePart::GetPrev()
+{
+	return this->prev;
+}
+
+FVector ASnakePart::GetPrevPos()
+{
+	return this->prevPos;
+}

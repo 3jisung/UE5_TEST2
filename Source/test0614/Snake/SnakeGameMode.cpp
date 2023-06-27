@@ -151,7 +151,7 @@ void ASnakeGameMode::Tick(float _Delta)
 
 	if (nullptr == BodyType)
 	{
-		UE_LOG(LogTemp, Error, TEXT("%S(%u)> if (nullptr == BodyType)"), __FUNCTION__, __LINE__);
+		//UE_LOG(LogTemp, Error, TEXT("%S(%u)> if (nullptr == BodyType)"), __FUNCTION__, __LINE__);
 		return;
 	}
 
@@ -186,7 +186,7 @@ void ASnakeGameMode::Tick(float _Delta)
 		Trans.SetLocation({ 0.0f, PointVector.Y * TileSize.Y, PointVector.Z * TileSize.Z });
 
 
-		CurBody = GetWorld()->SpawnActor<AActor>(BodyType, Trans);
+		CurBody = GetWorld()->SpawnActor<AActor>(BodyItemType, Trans);
 	}
 }
 
@@ -290,6 +290,24 @@ AActor* ASnakeGameMode::GetPart(int _Y, int _Z, FName _Tag)
 	}
 
 	return AllMapActor[_Z][_Y];
+}
+
+void ASnakeGameMode::AddBody(ASnakePart* head)
+{
+	ASnakePart* currentPart = head;
+
+	while (currentPart->GetNext() != nullptr)
+	{
+		currentPart = currentPart->GetNext();
+	}
+
+	FTransform Trans;
+	Trans.SetLocation({ 0.0f, currentPart->GetPrevPos().Y, currentPart->GetPrevPos().Z });
+
+	ASnakePart* body = Cast<ASnakePart>(GetWorld()->SpawnActor<AActor>(BodyType, Trans));
+	
+	body->SetPrev(currentPart);
+	currentPart->SetNext(body);
 }
 
 void ASnakeGameMode::CurBodyReset()
