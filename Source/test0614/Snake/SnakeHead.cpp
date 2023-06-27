@@ -14,7 +14,6 @@ void ASnakeHead::LeftMove(float _Value)
 	AddActorLocalOffset(FVector::LeftVector);
 }
 
-
 void ASnakeHead::RightMove(float _Value)
 {
 	if (0 == _Value)
@@ -24,6 +23,7 @@ void ASnakeHead::RightMove(float _Value)
 
 	AddActorLocalOffset(FVector::RightVector);
 }
+
 void ASnakeHead::UpMove(float _Value)
 {
 	if (0 == _Value)
@@ -32,6 +32,7 @@ void ASnakeHead::UpMove(float _Value)
 	}
 	AddActorLocalOffset(FVector::UpVector);
 }
+
 void ASnakeHead::DownMove(float _Value)
 {
 	if (0 == _Value)
@@ -77,6 +78,7 @@ void ASnakeHead::LeftAction()
 	}
 
 }
+
 void ASnakeHead::RightAction()
 {
 	SetPrevPos(GetActorLocation());
@@ -113,6 +115,7 @@ void ASnakeHead::RightAction()
 	}
 
 }
+
 void ASnakeHead::UpAction()
 {
 	SetPrevPos(GetActorLocation());
@@ -148,6 +151,7 @@ void ASnakeHead::UpAction()
 		GetSnakeGameMode()->CurBodyReset();
 	}
 }
+
 void ASnakeHead::DownAction()
 {
 	SetPrevPos(GetActorLocation());
